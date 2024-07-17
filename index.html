@@ -51,6 +51,40 @@
         </section>
     </main>
 
-    <script src="app.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('newTaskForm');
+    const taskList = document.getElementById('tasks');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Get form values
+        const title = form.elements.taskTitle.value;
+        const category = form.elements.taskCategory.value;
+        const deadline = form.elements.taskDeadline.value;
+        const priority = form.elements.taskPriority.value;
+        const description = form.elements.taskDescription.value;
+
+        // Create task element
+        const taskItem = document.createElement('li');
+        taskItem.innerHTML = `
+            <h3>${title}</h3>
+            <p><strong>Category:</strong> ${category}</p>
+            <p><strong>Deadline:</strong> ${deadline}</p>
+            <p><strong>Priority:</strong> ${priority}</p>
+            <p>${description}</p>
+        `;
+        taskItem.classList.add('task-item');
+
+        // Add task to task list
+        taskList.appendChild(taskItem);
+
+        // Clear form fields
+        form.reset();
+    });
+});
+                          
+    </script>
 </body>
 </html>
