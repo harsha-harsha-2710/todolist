@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <section id="taskForm">
+            <h2>Create New Task</h2>
+            <form id="newTaskForm">
+                <label for="taskTitle">Task Title:</label><br>
+                <input type="text" id="taskTitle" name="taskTitle" required><br><br>
+                <label for="taskDeadline">Deadline:</label><br>
+                <input type="date" id="taskDeadline" name="taskDeadline" required><br><br>
+
+                <label for="taskPriority">Priority:</label><br>
+                <select id="taskPriority" name="taskPriority">
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select><br><br>
+
+                <label for="taskDescription">Description:</label><br>
+                <textarea id="taskDescription" name="taskDescription" rows="4" required></textarea><br><br>
+
+                <button type="submit" class = "create">Create Task</button>
+            </form>
+        </section>
+
+        <section id="taskList">
+            <h2>To Do List</h2>
+            <ul id="tasks">
+                <!-- Tasks will be dynamically added here -->
+            </ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
